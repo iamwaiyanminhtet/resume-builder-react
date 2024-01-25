@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-background-color:#0A090C;
+  --nav-background-color: rgb(0, 72, 96);
+  --cv-main-color : rgb(96, 189, 246);
+  --text-color : antiquewhite;
+}
+
+body {
+  background-color: var(--main-background-color);
+  color: var(--text-color);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--main-background-color);
+}
+
+.display-section {
+  border: 3px solid white;
+  padding: 1rem;
+}
+
+.input-section {
+  border-right: 3px solid white;
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  padding: 1.5rem;
+}

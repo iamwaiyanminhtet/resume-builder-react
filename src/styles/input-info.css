@@ -1,0 +1,72 @@
+#input-section h3 {
+    background-color: var(--cv-main-color);
+    color: black;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.input-section-intro {
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+.input-group {
+    position: relative;
+}
+
+.custom-input {
+    background-color: var(--main-background-color);
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--cv-main-color);
+    font-size: 1rem;
+    position: relative;
+    color: var(--cv-main-color);
+    padding: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+.custom-input-label {
+    position: absolute;
+    color: grey;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    transition: 0.3s ease-out; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.custom-input:focus + .custom-input-label
+{
+    top: -13px;
+    font-size: 0.6rem;
+    visibility: visible;
+    color: var(--cv-main-color);
+}
+
+.input-section-about {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+}
+
+.input-section-image {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+}
+
+#image-input {
+    visibility: hidden;
+}
+#label-image {
+    background-color: var(--cv-main-color);
+    display: inline-block;
+    padding: 0.5rem;
+    width: 112px;
+    color: black;
+    border-radius: 5px;
+}

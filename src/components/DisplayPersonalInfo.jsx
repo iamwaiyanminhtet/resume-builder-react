@@ -1,4 +1,4 @@
-import "../styles/display-header.css";
+import "../styles/display.css";
 import Pfp from "../assets/test.jpg"
 import Icon from "./helperComponents/Icon";
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';

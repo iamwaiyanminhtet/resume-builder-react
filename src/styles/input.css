@@ -1,4 +1,4 @@
-#input-section h3 {
+.input-section h3 {
     background-color: var(--cv-main-color);
     color: black;
     text-align: center;
@@ -69,4 +69,59 @@
     width: 112px;
     color: black;
     border-radius: 5px;
+}
+
+.input-section-education,
+.input-section-experience 
+{
+    padding: 1rem;
+
+}
+
+.input-section-eduation-rows,
+.input-section-experience-rows
+{
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.input-section-education-row,
+.input-section-experience-row 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1rem 0;
+}
+
+input[type="date"] {
+    background-color: var(--cv-main-color);
+    border: none;
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 5px;
+}
+
+.plus-minus {
+    display: flex;
+    justify-content: end;
+}
+
+
+.add-row-btn {
+    background-color: var(--cv-main-color);
+    color: black;
+    padding: 0.5rem 0.7rem;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.remove-row-btn
+{
+    background-color: brown;
+    color: white;
+    padding: 0.5rem 0.7rem;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 10px;
 }

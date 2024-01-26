@@ -1,4 +1,4 @@
-import "../styles/input-info.css"
+import "../styles/input.css"
 import TextInput from "./helperComponents/TextInput";
 
 const InputPersonalInfo = ({info, handler}) => {

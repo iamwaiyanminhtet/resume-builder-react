@@ -1,0 +1,162 @@
+.display-section-header {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: center;
+}
+
+.display-section-img {
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.display-section-img img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.display-section-intro {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    margin-block: 3rem;
+
+}
+
+.display-section-intro h2{
+    font-size: 2.5rem;
+    color: var(--cv-main-color);
+    margin-bottom: 1rem;
+}
+.display-section-intro span{
+    font-size: 1rem;
+    color: rgb(176, 176, 176);
+}
+.display-section-intro p{
+    font-size: 1.2rem;
+}
+
+.display-section-info div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-basis: 1;
+}
+
+.contact-info {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.email-display,
+.phone-number-display,
+.address-display {
+    margin-left: 5px;
+}
+
+.contact-info-icon
+{
+    background-color: var(--cv-main-color);
+    padding: 0.2rem;
+    border-radius: 5px;
+}
+
+.display-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.display-section-education h3,
+.display-section-experience h3
+{
+    background-color: var(--cv-main-color);
+    color: black;
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.education-info,
+.experience-info
+{
+    padding: 1rem;
+}
+
+.display-section-education ,
+.display-section-experience
+{
+    position: relative;
+    width: 100%;
+}
+
+.display-section-education ul,
+.display-section-experience ul
+{
+    position: relative;
+    width: 100%;
+} 
+
+.display-section-education ul,
+.display-section-experience ul {
+    list-style: none;
+}
+
+.display-section-education ul li div,
+.display-section-experience ul li div
+{
+    position: relative;
+    left: 0;
+    color: var(--text-color);
+    list-style: none;
+    margin: 4px 0;
+    border-left: 2px solid var(--cv-main-color);
+    transition: 0.5s;
+    cursor: pointer;
+    width: 100%;
+}
+
+.display-section-education ul li div:hover,
+.display-section-experience ul li div:hover
+{
+    left: 10px;
+}
+
+.display-section-education ul li div span,
+.display-section-experience ul li div span
+{
+    position: relative;
+    padding: 8px;
+    padding-left: 12px;
+    display: block;
+    z-index: 1;
+    transition: 0.5s;
+    text-wrap: wrap;
+    max-width: 80ch ;
+    font-size: 1.3rem;
+}
+.display-section-education ul li div:hover span, 
+.display-section-experience ul li div:hover span {
+    color: #111;
+}
+
+.display-section-education ul li div:before,
+.display-section-experience ul li div:before 
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:var(--cv-main-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.5s;
+}
+.display-section-education ul li div:hover:before,
+.display-section-experience ul li div:hover:before
+{
+    transform: scaleX(1);
+}

@@ -1,5 +1,5 @@
 import "../styles/display.css";
-import Pfp from "../assets/test.jpg"
+
 import Icon from "./helperComponents/Icon";
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
@@ -12,7 +12,7 @@ const DisplayPersonalInfo = ({ info }) => {
     <>
       <div className="display-section-header">
         <div className="display-section-img">
-          <img src={Pfp} alt="image" />
+          <img src={info.imageFile === null ? info.image : info.imageFile} alt="image" />
         </div>
         <div className="display-section-intro">
           <span id="position-display">{info.position}</span>

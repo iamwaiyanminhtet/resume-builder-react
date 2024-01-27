@@ -22,6 +22,11 @@ main {
   background-color: var(--main-background-color);
 }
 
+hr {
+  margin: 2rem 0;
+  border-color: var(--cv-main-color);
+}
+
 .display-section {
   border: 3px solid white;
   padding: 1rem;
@@ -32,4 +37,62 @@ main {
   border-top: 3px solid white;
   border-bottom: 3px solid white;
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#resume-div {
+  align-self: flex-end;
+  margin: 1rem;
+}
+
+#print-resume {
+  padding: 0.5rem;
+  background-color: var(--main-background-color);
+  border:2px solid var(--cv-main-color);
+  color: white;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+#print-resume:hover {
+  background-color: var(--cv-main-color);
+  color: black;
+}
+
+@media screen and (max-width:900px) {
+  main {
+      display: grid;
+      grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width:550px) {
+  .input-section-intro {
+      grid-template-columns: 1fr;
+  }
+  .display-body {
+      display: grid;
+      grid-template-columns: 1fr;
+  }
+  .input-section-education-row,
+  .input-section-experience-row 
+  {
+      display: grid;
+      grid-template-columns: 1fr;
+      margin: 1rem;
+      gap: 10px;
+  }
+}
+
+@media print {
+  body {
+    visibility: hidden;
+    print-color-adjust: exact;
+  }
+  .display-section {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
 }

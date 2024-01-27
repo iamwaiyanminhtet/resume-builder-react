@@ -1,0 +1,42 @@
+.display-follow-me {
+    padding: 1rem;
+}
+
+.display-follow-me h3 {
+    background-color: var(--cv-main-color);
+    color: black;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.display-follow-me ul {
+    padding: 1rem;
+    display: grid;
+    flex-direction: 1fr;
+    gap: 10px;
+}
+
+.display-follow-me ul li {
+    list-style: none;
+    color: var(--text-color);
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid var(--cv-main-color);
+    transition: 0.5s;
+}
+
+.display-follow-me ul li:hover {
+    background-color: var(--cv-main-color);
+    color: black;
+}
+
+.display-follow-me ul li a:hover {
+    color: black;
+    text-decoration-color: black;
+}
+
+.display-follow-me ul li a {
+    color: var(--text-color);
+    text-decoration-color: var(--cv-main-color);
+}

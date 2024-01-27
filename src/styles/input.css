@@ -71,6 +71,10 @@
     border-radius: 5px;
 }
 
+.input-investment-section {
+    margin-bottom: 1rem;
+}
+
 .input-section-education,
 .input-section-experience 
 {

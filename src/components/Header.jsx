@@ -6,7 +6,12 @@ const Header = () => {
         <ul>
             <li>Resume Builder</li>
             <li>
-               <button type="button" id="exampleBtn">Example</button>
+               {/* 
+               I could do like this for every states
+               onClick={() => setInfo({...info, name : "Jack Frost"})}, 
+               but I will just window.location.reload() :)
+               */}
+               <button type="button" id="exampleBtn" onClick={() => window.location.reload()}>Example</button>
             </li>
         </ul>
     </nav>

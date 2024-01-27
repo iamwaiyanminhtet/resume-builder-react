@@ -1,7 +1,7 @@
 import "../styles/input.css"
 import TextInput from "./helperComponents/TextInput";
 
-const InputPersonalInfo = ({info, handler}) => {
+const InputPersonalInfo = ({info, handler, imagePreview}) => {
   return (
     <div>
         <h3>Your Info</h3>
@@ -34,7 +34,7 @@ const InputPersonalInfo = ({info, handler}) => {
         </div>
         <div className="input-section-image">
             <label htmlFor="image-input" id="label-image">Image Upload</label>
-            <input type="file" accept="image/*" id="image-input" />
+            <input type="file" accept="image/*" id="image-input" onChange={(e) => imagePreview(e)}/>
         </div>
     </div>
   )

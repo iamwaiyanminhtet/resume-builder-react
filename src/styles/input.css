@@ -129,3 +129,21 @@ input[type="date"] {
     border-radius: 5px;
     margin-right: 10px;
 }
+
+@media screen and (max-width:550px) {
+    .input-section-intro {
+        grid-template-columns: 1fr;
+    }
+    .display-body {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .input-section-education-row,
+    .input-section-experience-row 
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 1rem;
+        gap: 10px;
+    }
+  }

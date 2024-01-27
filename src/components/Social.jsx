@@ -16,7 +16,7 @@ const Social = ({info}) => {
   )
 }
 
-const SocialInput = ({info, handler, action}) => {
+const SocialInput = ({info, handler, action, dataArrName}) => {
     return (
     <>
     <div>
@@ -26,21 +26,21 @@ const SocialInput = ({info, handler, action}) => {
                 info.map(social => 
                 <div className="input-section-intro" key={social.id}>
                     <div className="input-group">
-                        <input type="text" name="name" id="social-media-name-input-1" className="custom-input" placeholder="Social Media Name" onChange={(e) => handler(social.id, "type", e.target.value)}/>
+                        <input type="text" name="name" id="social-media-name-input-1" className="custom-input" placeholder="Social Media Name" onChange={(e) => handler(social.id, "type", e.target.value, info, dataArrName)}/>
                         <label htmlFor="social-media-name-input-1" className="custom-input-label">Social Media Name</label>
                     </div>
                     <div className="input-group">
-                        <input type="text" id="acc-link-input-1"  className="custom-input" placeholder="Acc-link" onChange={(e) => handler(social.id, "accLink", e.target.value)}/>
+                        <input type="text" id="acc-link-input-1"  className="custom-input" placeholder="Acc-link" onChange={(e) => handler(social.id, "accLink", e.target.value, info, dataArrName)}/>
                         <label htmlFor="acc-link" className="custom-input-label">Acc-link</label>
                     </div>
                 </div> )
             }
             </div>
             <div className="plus-minus">
-                <div className="add-row-btn" id="add-education-row-btn" onClick={(e) => action(e.target.innerText)}>
+                <div className="add-row-btn" id="add-education-row-btn" onClick={(e) => action(info, dataArrName, e.target.innerText)}>
                     +
                 </div> 
-                <div className="remove-row-btn" id="remove-education-row-btn" onClick={(e) => action(e.target.innerText)}>
+                <div className="remove-row-btn" id="remove-education-row-btn" onClick={(e) => action(info, dataArrName, e.target.innerText)}>
                     -
                 </div> 
             </div>

@@ -8,46 +8,49 @@ import DisplayInvestment from './components/DisplayInvestment';
 import InputInvestment from './components/InputInvestment';
 import { v4 as uuidv4 } from 'uuid';
 import Social, { SocialInput } from './components/Social';
+import Footer from './components/Footer';
 
 
 function App() {
 
+  // display personal info
   let [info, setInfo] = useState({
     imageFile : null,
     image: Pfp,
-    name: "Jack Frost",
-    position: "Full Stack Developer",
+    name: "Aragorn",
+    position: "King of Gondor",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-    email: "jackfrost123@gmail.com",
+    email: "aragorn@gondor.com",
     phone: "0987654321",
     address: "35th, 60th & 61th"
   });
 
-  let [edu, setEdu] = useState([
-    {
-      start: "2010-06-01",
-      end: "2012-01-31",
-      where: "Lorem ipsum dolor sit amet",
-      id: uuidv4()
-    }
-  ])
-
-  let [experience, setExperience] = useState([
-    {
-      start: "2010-06-01",
-      end: "2012-01-31",
-      where: "Lorem ipsum dolor sit amet",
-      id: uuidv4()
-    }
-  ])
-
-  let [social, setSocial] = useState([
-    {
-      type: "Facebook",
-      accLink: "https://www.facebook.com/example",
-      id: uuidv4()
-    }
-  ]);
+  // others section data
+  let [general, setGeneral] = useState({
+    edu : [
+      {
+        start: "2010-06-01",
+        end: "2012-01-31",
+        where: "Lorem ipsum dolor sit amet",
+        id: uuidv4()
+      }
+    ],
+    experience : [
+      {
+        start: "2010-06-01",
+        end: "2012-01-31",
+        where: "Lorem ipsum dolor sit amet",
+        id: uuidv4()
+      }
+    ],
+    social : [
+      {
+        type: "Facebook",
+        accLink: "https://www.facebook.com/example",
+        id: uuidv4()
+      }
+    ]
+  });
 
   // personal info input handler
   function infoHandler(property, value) {
@@ -66,96 +69,47 @@ function App() {
     }
   }
 
-  // edu input handler
-  function eduHandler(id, property, value) {
-    let newEdu = [];
-    edu.map(place => {
+  // others section state handlers
+  function handler(id, property, value, dataArr, name) {
+    let newArr = [];
+    dataArr.map(place => {
       if (place.id === id) {
-        newEdu.push({ ...place, [property]: value });
+        newArr.push({ ...place, [property]: value });
         return;
       }
-      newEdu.push(place);
+      newArr.push(place);
     });
-    setEdu(newEdu);
+    setGeneral({...general, [name] : newArr})
   }
 
-  // edu add new row
-  function eduAction(value) {
-    if (value === "+") {
-      setEdu([...edu, {
-        start: "0000-00-00",
-        end: "0000-00-00",
-        where: "Lorem ipsum dolor sit amet",
-        id: uuidv4()
-      }]);
+  // action when inputs change
+  function action(info , mainProps, symbol) {
+    if (symbol === "+") {
+      if(mainProps === "edu" || mainProps === "experience") {
+        let newArr = [...info, {
+          start: "0000-00-00",
+          end: "0000-00-00",
+          where: "Lorem ipsum dolor sit amet",
+          id: uuidv4()
+        }];
+        setGeneral({...general, [mainProps] : newArr})
+      }
+      if(mainProps === "social") {
+        let newArr = [...info, {
+          type: "Facebook",
+          accLink: "https://www.facebook.com/example",
+          id: uuidv4()
+        }];
+        setGeneral({...general, [mainProps] : newArr})
+      }
     }
-    if (value === "-") {
-      if (edu.length > 1) {
-        edu.pop();
-        setEdu([...edu]);
+    if (symbol === "-") {
+      if (info.length > 1) {
+        info.pop();
+        setGeneral({...general, [mainProps] : info})
       }
     }
   }
-
-  // experience input handler
-  function experienceHandler(id, property, value) {
-    let newExperience = [];
-    experience.map(place => {
-      if (place.id === id) {
-        newExperience.push({ ...place, [property]: value });
-        return;
-      }
-      newExperience.push(place);
-    });
-    setExperience(newExperience);
-  }
-
-  // experience add new row
-  function experienceAction(value) {
-    if (value === "+") {
-      setExperience([...experience, {
-        start: "0000-00-00",
-        end: "0000-00-00",
-        where: "Lorem ipsum dolor sit amet",
-        id: uuidv4()
-      }]);
-    }
-    if (value === "-") {
-      if (experience.length > 1) {
-        experience.pop();
-        setExperience([...experience]);
-      }
-    }
-  }
-
-  function socialHandler(id, property, value) {
-    let newSocial = [];
-    social.map(social => {
-      if (social.id === id) {
-        newSocial.push({ ...social, [property]: value });
-        return;
-      }
-      newSocial.push(social);
-    });
-    setSocial(newSocial);
-  }
-
-  function socialAction(value) {
-    if (value === "+") {
-      setSocial([...social, {
-        type: "Facebook",
-        accLink: "https://www.facebook.com/example",
-        id: uuidv4()
-      }]);
-    }
-    if (value === "-") {
-      if (social.length > 1) {
-        social.pop();
-        setSocial([...social]);
-      }
-    }
-  }
-
 
   return (
     <>
@@ -167,26 +121,27 @@ function App() {
           <DisplayPersonalInfo info={info} />
           <hr/>
           <div className='display-body'>
-            <DisplayInvestment name="Education" placeList={edu} />
-            <DisplayInvestment name="Experience" placeList={experience} />
+            <DisplayInvestment name="Education" placeList={general.edu} />
+            <DisplayInvestment name="Experience" placeList={general.experience} />
           </div>
           <hr/>
-          <Social info={social} />
+          <Social info={general.social} />
         </div>
         <div className="input-section">
           <InputPersonalInfo info={info} handler={infoHandler} imagePreview={imagePreview} />
           <hr/>
-          <InputInvestment name="Education" info={edu} handler={eduHandler} action={eduAction} />
+          <InputInvestment name="Education" dataArrName="edu" info={general.edu} handler={handler} action={action} />
           <hr/>
-          <InputInvestment name="Experience" info={experience} handler={experienceHandler} action={experienceAction} />
+          <InputInvestment name="Experience" dataArrName="experience" info={general.experience} handler={handler} action={action} />
           <hr/>
-          <SocialInput info={social} handler={socialHandler} action={socialAction} />
+          <SocialInput info={general.social} handler={handler} action={action} dataArrName="social"/>
           <hr/>
           <div id="resume-div">
               <button id="print-resume" type="button" onClick={() => window.print()}>Print Resume</button>
           </div>
         </div>
       </main>
+      <Footer/>
     </>
   )
 }

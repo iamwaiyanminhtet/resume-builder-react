@@ -16,6 +16,28 @@ body {
   color: var(--text-color);
 }
 
+/* width */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: #ffffff; 
+}
+
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -28,14 +50,14 @@ hr {
 }
 
 .display-section {
-  border: 3px solid white;
+  border: 3px solid rgb(0, 0, 0);
   padding: 1rem;
 }
 
 .input-section {
-  border-right: 3px solid white;
-  border-top: 3px solid white;
-  border-bottom: 3px solid white;
+  border-right: 3px solid rgb(0, 0, 0);
+  border-top: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgb(0, 0, 0);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -66,23 +88,6 @@ hr {
   }
 }
 
-@media screen and (max-width:550px) {
-  .input-section-intro {
-      grid-template-columns: 1fr;
-  }
-  .display-body {
-      display: grid;
-      grid-template-columns: 1fr;
-  }
-  .input-section-education-row,
-  .input-section-experience-row 
-  {
-      display: grid;
-      grid-template-columns: 1fr;
-      margin: 1rem;
-      gap: 10px;
-  }
-}
 
 @media print {
   body {

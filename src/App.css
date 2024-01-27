@@ -90,14 +90,22 @@ hr {
 
 
 @media print {
-  body {
-    visibility: hidden;
-    print-color-adjust: exact;
+  header {
+    display: none;
   }
-  .display-section {
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    top: 0;
+
+  .input-section {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
   }
 }

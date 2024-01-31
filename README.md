@@ -12,7 +12,7 @@ Experience the ability to dynamically generate and preview your resume as you fi
 ![Demo 3](src/assets/screenshot-3.png)
 
 ## Demo
-[Resume Builder](https://resume-builder-iamwaiyanminhtet.netlify.app/)
+[Resume Builder](https://iamwaiyanminhtet-resume-builder.netlify.app/)
 
 ## Lessons Learned
 - JSX basic syntax
